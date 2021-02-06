@@ -2,7 +2,7 @@ body, button, html, input, select, textarea {
     font-family: "Microsoft JhengHei";
 }
 
-main {
+.bg-cover {
     background-color: rgb(0, 217, 255);
 }
 
