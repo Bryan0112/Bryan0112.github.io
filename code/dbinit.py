@@ -24,7 +24,7 @@ lines = fin.readlines()
 for line in lines:
     row_id += 1
     currency, ratio, fluctuation = line.split()
-    cur.execute("INSERT INTO WORDS VALUES (?, ?, ?, ?)", (row_id, currency, ratio, fluctuation))
+    cur.execute("INSERT INTO CURRENCY VALUES (?, ?, ?, ?)", (row_id, currency, ratio, fluctuation))
 conn.commit()    
 fin.close()
 # 查詢外幣表
