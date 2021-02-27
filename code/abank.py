@@ -1,7 +1,7 @@
 # atestcenter.py
 from adb import DB
 
-class TestCenter():
+class Bank():
     def __init__(self):
         self.menu_title = '高X銀行'
         self.menu = {
@@ -123,7 +123,7 @@ class TestCenter():
 
 # entry point
 with DB() as db:
-    atestcenter = TestCenter()
+    abank = Bank()
     while True:
         func_id, func_name = atestcenter.show_menu()
         if func_id == 'q':

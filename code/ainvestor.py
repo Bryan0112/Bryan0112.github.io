@@ -1,7 +1,7 @@
 # aexaminee.py
 from adb import DB
 
-class Examinee():
+class Investor():
     def __init__(self):
         self.menu_title = '投資人'
         self.account = ''
@@ -46,11 +46,11 @@ class Examinee():
         """ 登入．註冊
         """
         account_input = input('請輸入帳號: ')
-        if db.check_if_examinee_existed(account_input):
+        if db.check_if_investor_existed(account_input):
             self.account = account_input
-            db.print_examinee_info(self.account)
+            db.print_investor_info(self.account)
         else:
-            if db.insert_or_update_examinee(account_input, 'insert'):
+            if db.insert_or_update_investor(account_input, 'insert'):
                 print('註冊成功，可立即參加測驗')
 
     def print_definitions(self, word_def):
@@ -155,9 +155,9 @@ class Examinee():
     def profile(self, db, func_title):
         """ 個人資料修改
         """
-        if db.insert_or_update_examinee(self.account, 'update'):
+        if db.insert_or_update_investor(self.account, 'update'):
             print('--- 資料已更新 ---')
-            db.print_examinee_info(self.account)
+            db.print_investor_info(self.account)
         else:
             print('--- 資料未更新 ---')
         return func_title
@@ -192,16 +192,16 @@ class Examinee():
 
 # entry point
 with DB() as db:
-    aexaminee = Examinee()
+    ainvestor = Investor()
     while True:
-        func_id, func_name = aexaminee.show_menu()
+        func_id, func_name = investor.show_menu()
         if func_id == 'q':
             break
         elif func_id == '':
             print(func_name)
         else:
-            if aexaminee.account == '':
+            if investor.account == '':
                 func_id = 'a'
                 print('請先登入或註冊')
-            aexaminee.menu_func[func_id](db, func_name)
+            investor.menu_func[func_id](db, func_name)
         print()
