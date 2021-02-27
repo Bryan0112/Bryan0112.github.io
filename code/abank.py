@@ -3,7 +3,7 @@ from adb import DB
 
 class Bank():
     def __init__(self):
-        self.menu_title = '高X銀行'
+        self.menu_title = '天空銀行'
         self.menu = {
             'a':'已建外幣查詢',
             'b':'新增修改外幣',
