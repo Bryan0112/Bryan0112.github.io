@@ -3,15 +3,15 @@ from adb import DB
 
 class Examinee():
     def __init__(self):
-        self.menu_title = '參測考生'
+        self.menu_title = '投資人'
         self.account = ''
         self.menu = {
             'a':'登入．註冊',
-            'b':'選擇題測驗',
-            'c':'填充題測驗',
-            'd':'個人成績查詢',
+            'b':'查看今日匯率',
+            'c':'買賣外幣',
+            'd':'買入外幣查詢',
             'e':'個人資料修改',
-            'f':'亂數播放單字',
+            'f':'進入下一天',
             'q':'離開',
         }
         self.menu_func = {

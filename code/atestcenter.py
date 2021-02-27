@@ -3,14 +3,12 @@ from adb import DB
 
 class TestCenter():
     def __init__(self):
-        self.menu_title = '測驗中心'
+        self.menu_title = '高X銀行'
         self.menu = {
-            'a':'單字建檔查詢',
-            'b':'選擇題型設定',
-            'c':'填充題型設定',
-            'd':'參測考生列表',
-            'e':'測驗成績統計',
-            'f':'個人成績查詢',
+            'a':'已建外幣查詢',
+            'b':'新增修改外幣',
+            'c':'電腦帳戶設定',
+            'd':'投資帳戶列表',
             'q':'離開',
         }
         self.menu_func = {
@@ -18,8 +16,8 @@ class TestCenter():
             'b': lambda db, ft: self.set_multiple_choice(db, ft),
             'c': lambda db, ft: self.set_fill_in_the_blank(db, ft),
             'd': lambda db, ft: self.examinees(db, ft),
-            'e': lambda db, ft: self.summary(db, ft),
-            'f': lambda db, ft: self.score_list(db, ft),
+            # 'e': lambda db, ft: self.summary(db, ft),
+            # 'f': lambda db, ft: self.score_list(db, ft),
         }
         self.divider = '='*20
 
